@@ -11,6 +11,6 @@ Guereak's [script](https://github.com/Guereak/USBDuckyScripts/blob/main/duckytok
 4. Click `Webhooks`
 5. Create a new webhook by clicking `New Webhook`
 6. Click `Copy Webhook URL` to copy the webhook URL
-7.In line 98 of *payload.txt*, replace `WEBHOOK URL GOES HERE` with the webhook URL
+7. In line 98 of *payload.txt*, replace `WEBHOOK URL GOES HERE` with the webhook URL
 8. You're set! Load onto device and start grabbing tokens!
  
